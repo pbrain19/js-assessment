@@ -32,9 +32,9 @@ exports.arraysAnswers = {
   },
 
   removeWithoutCopy : function(arr, item) {
-    var indexFound = [];
-    var toKeep = [];
-    var size = arr.length - 1;
+    var indexFound = [],
+      toKeep = [],
+      size = arr.length - 1;
     for(i = size; i >= 0; i--) {
       var val = arr[i];
       if(item !== val) {
@@ -99,8 +99,8 @@ exports.arraysAnswers = {
   },
 
   duplicates : function(arr) {
-    var temp = [];
-    var scores = {};
+    var temp = [],
+      scores = {};
     arr.forEach(function(item) {
       if(scores[item] === 1) {
         scores[item] += 1;

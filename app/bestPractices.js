@@ -8,7 +8,7 @@ exports = (typeof window === 'undefined') ? global : window;
 
 exports.bestPracticesAnswers = {
   globals : function() {
-    myObject = {
+    var myObject = {
       name : 'Jory'
     };
 
@@ -16,20 +16,22 @@ exports.bestPracticesAnswers = {
   },
 
   functions : function(flag) {
+    var toRun;
     if (flag) {
-      function getValue() { return 'a'; }
+      toRun = function getValue() { return 'a'; }
     } else {
-      function getValue() { return 'b'; }
+      toRun = function getValue() { return 'b'; }
     }
 
-    return getValue();
+    return toRun();
   },
 
   parseInt : function(num) {
-    return parseInt(num);
+    var effectiveNum =  num.split(/[a-z]/i);
+    return parseInt(effectiveNum[0]);
   },
 
   identity : function(val1, val2) {
-
+    return val1 === val2;
   }
 };
